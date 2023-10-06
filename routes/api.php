@@ -19,8 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/v1/notebook', [Controller::class, 'all_client']);
 Route::post('/v1/notebook', [Controller::class, 'add_client']);
+Route::get('/v1/notebook', [Controller::class, 'all_client']);
 Route::get('/v1/notebook/{id}', [Controller::class, 'id_client']);
-Route::delete('/v1/notebook/{id}', [Controller::class, 'delete_client']);
 Route::patch('/v1/notebook/{id}', [Controller::class, 'edit_client']);
+Route::delete('/v1/notebook/{id}', [Controller::class, 'delete_client']);

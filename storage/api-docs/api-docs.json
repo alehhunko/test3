@@ -1,0 +1,384 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My Doc API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/": {},
+        "/api/v1/notebook": {
+            "get": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "All users",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "igInteger",
+                                                "example": "1"
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "example": "Jan"
+                                            },
+                                            "company": {
+                                                "type": "string",
+                                                "example": "JanCo"
+                                            },
+                                            "phone": {
+                                                "type": "unsignedBigInteger",
+                                                "example": "55555555"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "example": "jan@mail"
+                                            },
+                                            "birth_date": {
+                                                "type": "string",
+                                                "format": "date",
+                                                "example": "2021-06-09"
+                                            },
+                                            "foto": {
+                                                "type": "string",
+                                                "example": "link"
+                                            },
+                                            "updated_at": {
+                                                "type": "string",
+                                                "format": "date",
+                                                "example": "2023-10-05T12:52:12.000000Z"
+                                            },
+                                            "created_at": {
+                                                "type": "string",
+                                                "format": "date",
+                                                "example": "2023-10-05T12:52:12.000000Z"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Add new user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "example": "Jan"
+                                            },
+                                            "company": {
+                                                "type": "string",
+                                                "example": "JanCo"
+                                            },
+                                            "phone": {
+                                                "type": "unsignedBigInteger",
+                                                "example": "55555555"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "example": "jan@mail"
+                                            },
+                                            "birth_date": {
+                                                "type": "string",
+                                                "format": "date",
+                                                "example": "2021-06-09"
+                                            },
+                                            "foto": {
+                                                "type": "string",
+                                                "example": "link"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "igInteger",
+                                            "example": "1"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "Jan"
+                                        },
+                                        "company": {
+                                            "type": "string",
+                                            "example": "JanCo"
+                                        },
+                                        "phone": {
+                                            "type": "unsignedBigInteger",
+                                            "example": "55555555"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "jan@mail"
+                                        },
+                                        "birth_date": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "2021-06-09"
+                                        },
+                                        "foto": {
+                                            "type": "string",
+                                            "example": "link"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "2023-10-05T12:52:12.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "2023-10-05T12:52:12.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/notebook/{id}": {
+            "get": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "User by id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User ID",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "igInteger",
+                                            "example": "1"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "Jan"
+                                        },
+                                        "company": {
+                                            "type": "string",
+                                            "example": "JanCo"
+                                        },
+                                        "phone": {
+                                            "type": "unsignedBigInteger",
+                                            "example": "55555555"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "jan@mail"
+                                        },
+                                        "birth_date": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "2021-06-09"
+                                        },
+                                        "foto": {
+                                            "type": "string",
+                                            "example": "link"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "2023-10-05T12:52:12.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "2023-10-05T12:52:12.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Delete user",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Delete user",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "delete"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Notebook"
+                ],
+                "summary": "Update user",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Update user",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "example": "Jan"
+                                            },
+                                            "company": {
+                                                "type": "string",
+                                                "example": "JanCo"
+                                            },
+                                            "phone": {
+                                                "type": "unsignedBigInteger",
+                                                "example": "55555555"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "example": "jan@mail"
+                                            },
+                                            "birth_date": {
+                                                "type": "string",
+                                                "format": "date",
+                                                "example": "2021-06-09"
+                                            },
+                                            "foto": {
+                                                "type": "string",
+                                                "example": "link"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "igInteger",
+                                            "example": "1"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "Jan"
+                                        },
+                                        "company": {
+                                            "type": "string",
+                                            "example": "JanCo"
+                                        },
+                                        "phone": {
+                                            "type": "unsignedBigInteger",
+                                            "example": "55555555"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "jan@mail"
+                                        },
+                                        "birth_date": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "2021-06-09"
+                                        },
+                                        "foto": {
+                                            "type": "string",
+                                            "example": "link"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "2023-11-05T12:52:12.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "2023-10-05T12:52:12.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
